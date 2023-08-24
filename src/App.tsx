@@ -12,7 +12,7 @@ function App() {
           data-sitekey="6Lf_u84nAAAAAAnNuPWpkfjdbRT3dLi28Nt-zMuz" 
           data-callback='onSubmit' 
           data-action='submit'
-          onSubmit={()=> {console.log('true submit')}}
+          onClick={()=> {console.log('true submit')}}
           
           >Submit</button>
         </div>
