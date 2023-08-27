@@ -25,10 +25,10 @@ function App() {
     return (
       <div className="App">
           <div className="input-group">
-            <input type="text" name="name" value="" placeholder="Your name"/>
+            <input type="text" name="name" placeholder="Your name"/>
           </div>
           <div className="input-group">	
-              <input type="email" name="email" value="" placeholder="Your email"/>
+              <input type="email" name="email" placeholder="Your email"/>
           </div>
           <div className="input-group">
               <textarea name="message" placeholder="Type message..."></textarea>
