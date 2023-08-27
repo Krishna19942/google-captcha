@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { GoogleReCaptchaProvider, GoogleReCaptcha, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+
 function App() {
   const YourReCaptchaComponent = () => {
     const { executeRecaptcha } = useGoogleReCaptcha();
-  
     // Create an event handler so you can call the verification on button click event or form submit
     const handleReCaptchaVerify = React.useCallback(async () => {
       if (!executeRecaptcha) {
@@ -13,9 +13,9 @@ function App() {
       }
   
       const token = await executeRecaptcha('submit');
-      console.log('Token', token);
+      console.log('token received', token);
       // Do whatever you want with the token
-  +  }, [executeRecaptcha]);
+    }, [executeRecaptcha]);
   
     // You can use useEffect to trigger the verification as soon as the component being loaded
     React.useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
   return (
     <div className="App">
       <GoogleReCaptchaProvider reCaptchaKey="6Lf_u84nAAAAAAnNuPWpkfjdbRT3dLi28Nt-zMuz">
-      <YourReCaptchaComponent />        
+        <YourReCaptchaComponent />        
       </GoogleReCaptchaProvider>
     </div>
   );
