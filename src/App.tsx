@@ -7,16 +7,16 @@ import axios from 'axios';
 
 function App() {
   // TODO: Replace the following with your app's Firebase project configuration
-  // const firebaseConfig = {
-  //   apiKey: "AIzaSyBfhpK_TFSY6PNtWg8EjaJSjgIkI_GGey4",
-  //   authDomain: "recaptchav3-61eb1.firebaseapp.com",
-  //   projectId: "recaptchav3-61eb1",
-  //   storageBucket: "recaptchav3-61eb1.appspot.com",
-  //   messagingSenderId: "46461743954",
-  //   appId: "1:46461743954:web:6938f44e60fb5d04e6808b",
-  //   measurementId: "G-EP3WJ3ST65"
-  // };
-  // const app = initializeApp(firebaseConfig);
+  const firebaseConfig = {
+    apiKey: "AIzaSyBfhpK_TFSY6PNtWg8EjaJSjgIkI_GGey4",
+    authDomain: "recaptchav3-61eb1.firebaseapp.com",
+    projectId: "recaptchav3-61eb1",
+    storageBucket: "recaptchav3-61eb1.appspot.com",
+    messagingSenderId: "46461743954",
+    appId: "1:46461743954:web:6938f44e60fb5d04e6808b",
+    measurementId: "G-EP3WJ3ST65"
+  };
+  const app = initializeApp(firebaseConfig);
 
 
   const YourReCaptchaComponent = () => {
@@ -38,7 +38,7 @@ function App() {
       
       // Extract result from the API response
       if (res.data.success){
-        console.log('res',res)
+        console.log('res',res.data)
         console.log('Valid');
       } else {
         console.log('res',res)
@@ -48,13 +48,9 @@ function App() {
 
   // Pass your reCAPTCHA v3 site key (public key) to activate(). Make sure this
     // key is the counterpart to the secret key you set in the Firebase console.
-    // initializeAppCheck(app, {
-    //   provider: new ReCaptchaV3Provider('6Lcm7NwnAAAAALwID8kRKnkWhhAxMUSlO5PasZFk'),
-
-    //   // Optional argument. If true, the SDK automatically refreshes App Check
-    //   // tokens as needed.
-    //   isTokenAutoRefreshEnabled: true
-    // });
+    initializeAppCheck(app, {
+      provider: new ReCaptchaV3Provider('6Lcm7NwnAAAAALwID8kRKnkWhhAxMUSlO5PasZFk')
+    });
       // Do whatever you want with the token
     }, [executeRecaptcha]);
   
