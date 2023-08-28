@@ -87,7 +87,7 @@ function App() {
 
   return (
     <div className="App">
-      <GoogleReCaptchaProvider reCaptchaKey="6Lcm7NwnAAAAALwID8kRKnkWhhAxMUSlO5PasZFk">
+      <GoogleReCaptchaProvider reCaptchaKey="6Lcm7NwnAAAAALwID8kRKnkWhhAxMUSlO5PasZFk" useEnterprise={true}>
         <YourReCaptchaComponent />        
       </GoogleReCaptchaProvider>
     </div>
